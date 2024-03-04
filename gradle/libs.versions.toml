@@ -1,0 +1,25 @@
+[metadata]
+format.version = "1.1"
+
+[versions]
+edc = "0.5.0"
+nimbus = "9.37.3"
+tx = "0.6.0-SNAPSHOT"
+
+[libraries]
+# upstream EDC dependencies, if you need them
+edc-boot = { module = "org.eclipse.edc:boot", version.ref = "edc" }
+edc-spi-core = { module = "org.eclipse.edc:core-spi", version.ref = "edc" }
+edc-spi-identity-trust = { module = "org.eclipse.edc:identity-trust-spi", version.ref = "edc" }
+edc-spi-jwt = { module = "org.eclipse.edc:jwt-spi", version.ref = "edc" }
+
+
+# Tractus-X EDC modules - these pull in all transitive dependencies
+tx-controlplane = {module = "org.eclipse.tractusx.edc:edc-controlplane-postgresql-hashicorp-vault", version.ref="tx"}
+tx-dataplane = {module = "org.eclipse.tractusx.edc:edc-dataplane-hashicorp-vault", version.ref="tx"}
+
+# Third party libs
+nimbus-jwt = { module = "com.nimbusds:nimbus-jose-jwt", version.ref = "nimbus" }
+
+[plugins]
+shadow = { id = "com.github.johnrengelman.shadow", version = "8.1.1" }
