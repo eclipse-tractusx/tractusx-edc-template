@@ -14,7 +14,7 @@ To get the example up-and-running, there are two possibilities:
 - using a native Java process
   ```shell
   ./gradlew build
-  java -jar launchers/[controlplane|dataplane]/build/libs/[controlplane|dataplane].jar
+  java -jar runtimes/[controlplane|dataplane]/build/libs/[controlplane|dataplane].jar
   ```
 
 In both cases configuration must be supplied, either using Docker environment variables, or using Java
