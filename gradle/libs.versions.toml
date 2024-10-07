@@ -3,7 +3,7 @@ format.version = "1.1"
 
 [versions]
 edc = "0.7.1"
-nimbus = "9.40"
+nimbus = "9.41.2"
 tx = "0.7.3"
 
 [libraries]
