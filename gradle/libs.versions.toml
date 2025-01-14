@@ -2,9 +2,9 @@
 format.version = "1.1"
 
 [versions]
-edc = "0.7.1"
-nimbus = "9.40"
-tx = "0.7.3"
+edc = "0.10.1"
+nimbus = "9.46"
+tx = "0.8.0-rc6"
 
 [libraries]
 # upstream EDC dependencies, if you need them

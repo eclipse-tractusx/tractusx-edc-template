@@ -1,5 +1,5 @@
 # -buster is required to have apt available
-FROM eclipse-temurin:22.0.1_8-jre-alpine
+FROM eclipse-temurin:23_37-jre-alpine
 
 # Optional JVM arguments, such as memory settings
 ARG JVM_ARGS=""
@@ -24,5 +24,5 @@ HEALTHCHECK --interval=5s --timeout=5s --retries=10 CMD curl --fail http://local
 # Use "exec" for graceful termination (SIGINT) to reach JVM.
 # ARG can not be used in ENTRYPOINT so storing value in an ENV variable
 ENV ENV_JVM_ARGS=$JVM_ARGS
-# use the "exec" syntax so that SIGINT reaches the JVM -> graceful termination
-CMD ["sh", "-c", "exec java  -Djava.util.logging.config.file=/app/logging.properties -Djava.security.egd=file:/dev/urandom -jar edc-controlplane.jar"]
+
+ENTRYPOINT ["sh", "-c", "exec java  -Djava.util.logging.config.file=/app/logging.properties -Djava.security.egd=file:/dev/urandom -jar edc-controlplane.jar"]
